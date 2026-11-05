@@ -111,7 +111,9 @@ fun PortalScreen(
         AndroidView(
             factory = { context ->
                 WebView(context).also { webView ->
-                    webView.setBackgroundColor(android.graphics.Color.rgb(33, 33, 33))
+                    webView.setBackgroundColor(
+                        context.getColor(com.stevenfoerster.porthole.R.color.charcoal_background),
+                    )
                     WebViewSettings.apply(webView, jsEnabled)
                     webView.webViewClient =
                         PortholeWebViewClient(

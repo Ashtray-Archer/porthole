@@ -1,7 +1,7 @@
 # Charcoal Porthole
 
 Shared launch/dialog/system-bar resources are exact copies of android-NDK
-`e8b67dfc67776c2b8da919785d15f38d68c91db0`, verified by its canonical Grease
+`38d6899706d855201239d86e1629e2620c0e8821`, verified by its canonical Grease
 copy guard. The application explicitly chooses that window theme.
 
 The existing Compose theme defaults to dark charcoal and disables wallpaper
@@ -22,3 +22,10 @@ no preserved private signing identity is available for a C67 upgrade. No key
 is borrowed or substituted. All physical C67 checks are NOT_RUN.
 No merge, release, portal login, network-setting change or installed-app
 replacement is performed.
+
+The first current build compiled the Compose source and passed ktlint, but
+Detekt rejected four styling literals and Android lint rejected four newer
+shared-window attributes at the API26 floor. This follow-up uses a named
+existing-color value/resource lookup and adopts the actual API-qualified
+shared resource chain. Lint and API26 remain unchanged; no baseline or
+suppression is introduced. Current copy, lint, tests and APK validation must rerun.

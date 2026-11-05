@@ -134,7 +134,7 @@ fun MainScreen(
                         containerColor = MaterialTheme.colorScheme.surfaceVariant,
                         contentColor = MaterialTheme.colorScheme.onSurface,
                         disabledContainerColor = MaterialTheme.colorScheme.surface,
-                        disabledContentColor = Color(0xFF858585),
+                        disabledContentColor = DisabledTextColor,
                     ),
             ) {
                 Icon(
@@ -305,3 +305,4 @@ private fun MacRandomizationCard(modifier: Modifier = Modifier) {
 
 /** Green color used to indicate an active session. */
 private val ActiveSessionGreen = Color(0xFFA8D5BA)
+private val DisabledTextColor = Color(0xFF858585)
