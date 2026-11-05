@@ -39,7 +39,7 @@ fun SessionStatusBar(
     val minutes = remainingSeconds / SECONDS_PER_MINUTE
     val seconds = remainingSeconds % SECONDS_PER_MINUTE
 
-    val backgroundColor =
+    val statusColor =
         when {
             isConnected -> TunnelStatusGreen
             remainingSeconds <= LOW_TIME_THRESHOLD_SECONDS -> TunnelStatusRed
@@ -51,21 +51,21 @@ fun SessionStatusBar(
         modifier =
             modifier
                 .fillMaxWidth()
-                .background(backgroundColor)
+                .background(MaterialTheme.colorScheme.surface)
                 .padding(horizontal = 16.dp, vertical = 8.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
             text = if (isConnected) "CONNECTED" else "OUTSIDE TUNNEL",
-            color = Color.White,
+            color = statusColor,
             fontWeight = FontWeight.Bold,
             fontSize = 14.sp,
         )
 
         Text(
             text = String.format(java.util.Locale.ROOT, "%d:%02d", minutes, seconds),
-            color = Color.White,
+            color = statusColor,
             fontWeight = FontWeight.Bold,
             fontSize = 18.sp,
             style = MaterialTheme.typography.headlineSmall,
@@ -75,15 +75,15 @@ fun SessionStatusBar(
             Icon(
                 imageVector = Icons.Filled.Close,
                 contentDescription = "Close session",
-                tint = Color.White,
+                tint = statusColor,
             )
         }
     }
 }
 
-private val TunnelStatusRed = Color(0xFFD32F2F)
-private val TunnelStatusAmber = Color(0xFFF57C00)
-private val TunnelStatusGreen = Color(0xFF388E3C)
+private val TunnelStatusRed = Color(0xFFFFB4AB)
+private val TunnelStatusAmber = Color(0xFFE8CB8B)
+private val TunnelStatusGreen = Color(0xFFA8D5BA)
 
 private const val SECONDS_PER_MINUTE = 60
 private const val LOW_TIME_THRESHOLD_SECONDS = 30
