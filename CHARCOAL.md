@@ -29,3 +29,11 @@ shared-window attributes at the API26 floor. This follow-up uses a named
 existing-color value/resource lookup and adopts the actual API-qualified
 shared resource chain. Lint and API26 remain unchanged; no baseline or
 suppression is introduced. Current copy, lint, tests and APK validation must rerun.
+
+The versioned shared resource errors are gone, and the full build, Detekt,
+unit tests and APK assembly now pass. Android lint next identified an inherited
+missing FOREGROUND_SERVICE_SPECIAL_USE declaration for the app's existing
+specialUse timer/notification service at target34. Declare that normal permission
+for the already-declared service; no new service, runtime prompt or installed-app
+change is added. Lint remains enabled. Reference:
+https://developer.android.com/about/versions/14/changes/fgs-types-required.
