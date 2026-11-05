@@ -1,7 +1,6 @@
 package com.stevenfoerster.porthole.ui.theme
 
 import android.os.Build
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
@@ -13,16 +12,25 @@ import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme =
     darkColorScheme(
-        primary = Color(0xFF90CAF9),
-        secondary = Color(0xFF80CBC4),
-        tertiary = Color(0xFFCE93D8),
-        error = Color(0xFFEF5350),
-        background = Color(0xFF121212),
-        surface = Color(0xFF1E1E1E),
-        onPrimary = Color(0xFF003258),
-        onSecondary = Color(0xFF00332E),
-        onBackground = Color(0xFFE0E0E0),
-        onSurface = Color(0xFFE0E0E0),
+        primary = Color(0xFFF4F4F4),
+        secondary = Color(0xFFB4B4B4),
+        tertiary = Color(0xFFB4B4B4),
+        error = Color(0xFFFFB4AB),
+        background = Color(0xFF212121),
+        surface = Color(0xFF2F2F2F),
+        onPrimary = Color(0xFF212121),
+        onSecondary = Color(0xFF212121),
+        onBackground = Color(0xFFF4F4F4),
+        onSurface = Color(0xFFF4F4F4),
+        primaryContainer = Color(0xFF383838),
+        onPrimaryContainer = Color(0xFFF4F4F4),
+        secondaryContainer = Color(0xFF383838),
+        onSecondaryContainer = Color(0xFFF4F4F4),
+        surfaceVariant = Color(0xFF383838),
+        onSurfaceVariant = Color(0xFFB4B4B4),
+        outline = Color(0xFF454545),
+        outlineVariant = Color(0xFF454545),
+        surfaceTint = Color(0xFF2F2F2F),
     )
 
 private val LightColorScheme =
@@ -39,11 +47,11 @@ private val LightColorScheme =
         onSurface = Color(0xFF212121),
     )
 
-/** Porthole Material 3 theme with dynamic color support on Android 12+. */
+/** Charcoal by default; explicit legacy light/dynamic overrides remain available. */
 @Composable
 fun PortholeTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
+    darkTheme: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit,
 ) {
     val colorScheme =

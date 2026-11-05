@@ -120,11 +120,11 @@ class PortholeWebViewClient(
             <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
             <title>Navigation Blocked</title>
             <style>
-                body { font-family: sans-serif; padding: 24px; background: #1a1a1a; color: #e0e0e0; }
+                body { font-family: sans-serif; padding: 24px; background: #212121; color: #F4F4F4; }
                 .container { max-width: 480px; margin: 0 auto; text-align: center; }
-                h1 { color: #ff6b6b; font-size: 20px; }
+                h1 { color: #FFB4AB; font-size: 20px; }
                 p { font-size: 14px; line-height: 1.5; color: #aaa; }
-                .url { word-break: break-all; background: #2a2a2a; padding: 8px 12px;
+                .url { word-break: break-all; background: #2F2F2F; padding: 8px 12px;
                        border-radius: 4px; font-size: 12px; color: #888; margin: 16px 0; }
             </style>
             </head>
